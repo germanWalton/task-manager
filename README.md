@@ -4,8 +4,8 @@ A robust RESTful API for managing tasks with user authentication built with Node
 
 ## Live Demo
 
-API URL: `https://task-manager-api.example.com`  
-API Documentation: `https://task-manager-api.example.com/api-docs`
+API URL: `https://task-manager-94m3.onrender.com`  
+API Documentation: `https://task-manager-94m3.onrender.com/api-docs`
 
 ## Features
 
