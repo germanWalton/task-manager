@@ -7,3 +7,4 @@ coverage/
 
 # Node Modules
 node_modules/
+dist/
