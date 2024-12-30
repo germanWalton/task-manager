@@ -18,3 +18,5 @@
 {"level":"info","message":"Registration successful","timestamp":"2024-12-30T17:41:28.079Z","userId":"6772db47a587899fc95e570e"}
 {"filter":{},"level":"info","message":"Getting tasks with filter","timestamp":"2024-12-30T17:41:28.161Z"}
 {"filter":{},"level":"info","message":"Getting tasks with filter","timestamp":"2024-12-30T17:41:28.231Z"}
+{"level":"info","message":"MongoDB Connected: cluster0-shard-00-02.pmdmt.mongodb.net","timestamp":"2024-12-30T18:24:26.109Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2024-12-30T18:24:26.114Z"}
