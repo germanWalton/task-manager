@@ -2,7 +2,10 @@
   "name": "task-manager",
   "version": "1.0.0",
   "description": "Task Manager API",
-  "main": "app.ts",
+  "main": "dist/app.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "start": "node dist/app.js",
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
