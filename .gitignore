@@ -1,0 +1,9 @@
+# Test coverage
+coverage/
+
+# Environment variables
+.env
+.env.test
+
+# Node Modules
+node_modules/
