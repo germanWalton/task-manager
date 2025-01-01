@@ -66,7 +66,8 @@ export class AuthController {
       data: {
         valid: true,
         user: {
-          id: req.user?._id
+          id: req.user?.id,
+          email: req.user?.email,
         },
       },
     });

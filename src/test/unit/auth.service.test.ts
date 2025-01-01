@@ -33,7 +33,7 @@ describe("AuthService", () => {
       (User.findOne as jest.Mock).mockResolvedValue(null);
       (bcrypt.hash as jest.Mock).mockResolvedValue(mockHashedPassword);
       (User.create as jest.Mock).mockResolvedValue({
-        _id: mockUserId,
+        id: mockUserId,
         email: mockEmail,
         password: mockHashedPassword,
       });
@@ -73,7 +73,7 @@ describe("AuthService", () => {
 
     it("should successfully login a user", async () => {
       (User.findOne as jest.Mock).mockResolvedValue({
-        _id: mockUserId,
+        id: mockUserId,
         email: mockEmail,
         password: mockHashedPassword,
       });
@@ -101,7 +101,7 @@ describe("AuthService", () => {
 
     it("should throw error if password is invalid", async () => {
       (User.findOne as jest.Mock).mockResolvedValue({
-        _id: mockUserId,
+        id: mockUserId,
         email: mockEmail,
         password: mockHashedPassword,
       });

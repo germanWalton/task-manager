@@ -26,7 +26,7 @@ describe("Task Integration Tests", () => {
       email: "test@example.com",
       password: hashedPassword,
     });
-    userId = user._id.toString();
+    userId = user.id.toString();
     authToken = jwt.sign({ userId }, process.env.JWT_SECRET || "your-secret-key");
   });
 

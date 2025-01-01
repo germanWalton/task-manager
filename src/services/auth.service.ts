@@ -25,14 +25,14 @@ export class AuthService {
         password: hashedPassword,
       });
 
-      const token = this.generateToken(user._id);
+      const token = this.generateToken(user.id, user.email);
 
       logger.info("User registered successfully", { userId: user._id });
 
       return {
         token,
         user: {
-          id: user._id,
+          id: user.id,
           email: user.email,
         },
       };
@@ -57,7 +57,7 @@ export class AuthService {
         logger.warn("Login attempt with non-existent email", { email: loginDTO.email });
         throw new AppError("Invalid credentials", 401);
       }
-
+      logger.info('userLogin',user)
       const isPasswordValid = await this.comparePasswords(loginDTO.password, user.password);
 
       if (!isPasswordValid) {
@@ -65,14 +65,14 @@ export class AuthService {
         throw new AppError("Invalid credentials", 401);
       }
 
-      const token = this.generateToken(user._id);
+      const token = this.generateToken(user.id, user.email);
 
       logger.info("User logged in successfully", { userId: user._id });
 
       return {
         token,
         user: {
-          id: user._id,
+          id: user.id,
           email: user.email,
         },
       };
@@ -114,12 +114,13 @@ export class AuthService {
     }
   }
 
-  private generateToken(userId: string): string {
+  private generateToken(id: string, email: string): string {
     try {
-      return jwt.sign({ userId }, this.JWT_SECRET, { expiresIn: "60m" });
+      return jwt.sign({ id, email }, this.JWT_SECRET, { expiresIn: "60m" });
     } catch (error) {
       logger.error("Error generating JWT token", {
-        userId,
+        id,
+        email,
         error: error instanceof Error ? error.message : "Unknown error",
       });
       throw new AppError("Error generating authentication token", 500);
